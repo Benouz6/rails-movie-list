@@ -4,6 +4,7 @@ class ListsController < ApplicationController
   end
 
   def show
+    @list = List.find(params[:id])
   end
 
   def new
@@ -14,10 +15,15 @@ class ListsController < ApplicationController
     @list = List.new(list_params)
     if @list.save
       redirect_to lists_path(@list)
+    else
+      render :new
     end
   end
 
   def destroy
+    @list = List.find(params[:id])
+    @list.destroy
+    redirect_to root_path
   end
 
   private
