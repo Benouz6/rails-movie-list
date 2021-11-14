@@ -1,2 +1,7 @@
 <h1>Welcome in your cinema</h1>
-<%= link_to "New list", lists_new_path%>
+<%= link_to "New list", new_list_path%>
+
+<h3>Lists</h3>
+<% @lists.each do |list| %>
+<%= list.name %>
+<% end %>
