@@ -1,7 +1,8 @@
 <h1>Welcome in your cinema</h1>
 <%= link_to "New list", new_list_path%>
-
+<ul>
 <h3>Lists</h3>
 <% @lists.each do |list| %>
-<%= link_to list.name, list_path(list)%>
+<li><%= link_to list.name, list_path(list)%></li>
 <% end %>
+</ul>
